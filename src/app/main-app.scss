@@ -1,20 +1,103 @@
+/* styles.scss */
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background-color: #141414;
+  color: white;
+}
+
 .app-header {
-  background-color: #282c34;
+  background-color: #1c1c1c;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 40px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5em;
+    color: #ffdd57;
+    margin: 0;
+  }
+
+  small {
+    font-family: 'Cinzel', sans-serif;
+    color: #a8d5e2;
+    font-size: 1.2em;
+    margin-top: 10px;
+    display: block;
+  }
+}
+
+.film-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.film-item {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px;
+  margin: 10px;
+  background-color: #222;
+  border-radius: 8px;
+  transition: transform 0.3s;
+  cursor: pointer;
+  width: 200px;
 
-  small {
-    color: green;
-  }  
-} 
+  &:hover {
+    transform: scale(1.05);
+  }
 
-.film-item {
- display: flex;
- flex-direction: column;
- padding-left: 20px;
- padding-right: 20px;
+  img {
+    width: 100%;
+    height: 300px; /* Set a fixed height */
+    object-fit: cover; /* Ensure the image covers the area */
+    border-radius: 8px;
+  }
+
+  .film-title {
+    font-family: 'Cinzel', sans-serif;
+    margin: 10px 0;
+    text-align: center;
+    color: #ffdd57;
+  }
+
+  .film-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1c1c1c; /* Match the background color of the app header */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &:hover .film-details {
+    opacity: 1;
+  }
+
+  p {
+    margin: 5px 0;
+
+    i {
+      margin-right: 5px;
+      /* Add the following styles for icon colors */
+      &.fa-clock {
+        color: #f39c12; /* Example color for clock icon */
+      }
+      &.fa-star {
+        color: #ffdd57; /* Yellow color for star icon */
+      }
+    }
+  }
 }
