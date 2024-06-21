@@ -11,9 +11,56 @@ body {
   padding: 20px;
   text-align: center;
 
+  .app-header {
+    background-color: #1c1c1c;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 30px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    align-items: center; /* Center align horizontally */
+    justify-content: center; /* Center align vertically */
+  
+    .header-content {
+      display: flex; /* To align logo and text side by side */
+      align-items: center; /* Center align horizontally */
+  
+      .ghibli-logo {
+        width: 150px; /* Adjust width of the logo as needed */
+        height: auto; /* Maintain aspect ratio */
+        margin-right: 25px; /* Adjust spacing between logo and text */
+        margin-left: 15px;
+      }
+  
+      .umbrella {
+        width: 120px; /* Adjust width of the logo as needed */
+        height: auto; /* Maintain aspect ratio */
+        margin-left: 15px; /* Adjust spacing between logo and text */
+      }
+  
+  
+      h1 {
+        font-family: 'Cinzel', serif;
+        font-size: 2.5em;
+        color: #ffdd57;
+        margin: 0;
+      }
+    }
+  
+    small {
+      font-family: 'Cinzel', sans-serif;
+      color: #a8d5e2;
+      font-size: 1.2em;
+      margin-top: 10px;
+      display: block;
+    }
+  }
   .banner-container {
     display: flex;
     justify-content: center;
+    margin-top: 40px;
     margin-bottom: 20px;
 
     .banner {
@@ -64,6 +111,23 @@ body {
 
           i {
             margin-right: 10px;
+
+            /* Add the following styles for icon colors */
+            &.fa-video {
+              color: #ff5a5f; /* Example color for video icon */
+            }
+            &.fa-user-tie {
+              color: #3498db; /* Example color for producer icon */
+            }
+            &.fa-calendar-alt {
+              color: #e67e22; /* Example color for calendar icon */
+            }
+            &.fa-clock {
+              color: #f39c12; /* Example color for clock icon */
+            }
+            &.fa-star {
+              color: #ffdd57; /* Yellow color for star icon */
+            }
           }
         }
       }

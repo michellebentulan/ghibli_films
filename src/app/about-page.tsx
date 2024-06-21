@@ -4,7 +4,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Film } from "./film.interface";
 import './about-page.scss';
 
-
 const trailerUrls: { [key: string]: string } = {
   '2baf70d1-42bb-4437-b551-e5fed5a87abe': 'https://www.youtube.com/embed/8ykEy-yPBFc',
   '12cfb892-aac0-4c5b-94af-521852e46d6a': 'https://www.youtube.com/embed/4vPeTSRd580?si=WCPZhYOVjIfVmoWl',
@@ -28,9 +27,7 @@ const trailerUrls: { [key: string]: string } = {
   '5fdfb320-2a02-49a7-94ff-5ca418cae602': 'https://www.youtube.com/embed/jjmrxqcQdYg?si=ZA0DdvlUbAPys1SW',
   'd868e6ec-c44a-405b-8fa6-f7f0f8cfb500': 'https://www.youtube.com/embed/Sw7BggqBpTk?si=EPqgHxOgl9sdwyak',
   '790e0028-a31c-4626-a694-86b7a8cada40': 'https://www.youtube.com/embed/_PfhotgXEeQ?si=OVVYOfvAEQJXMjRX',
-
 };
-
 
 export function AboutPage() {
   const { filmId } = useParams();
@@ -49,6 +46,17 @@ export function AboutPage() {
 
   return (
     <div className="about-page">
+      <div className="app-header">
+        <div className="header-content">
+          <img src="/ghibli-logo.png" alt="Studio Ghibli Logo" className="ghibli-logo" />
+          <div>
+            <h1>Studio Ghibli Films</h1>
+            <small>Your favorite Ghibli movies all in one place</small>
+          </div>
+          <img src="/umb.png" alt="Studio Ghibli Logo" className="umbrella" />
+        </div>
+      </div>
+      
       <div className="banner-container">
         <img src={filmDetails?.movie_banner} alt={filmDetails?.title} className="banner" />
       </div>
@@ -80,7 +88,7 @@ export function AboutPage() {
           )}
         </div>
       </div>
-      <button onClick={handleBack}>Go Back</button>
+      <button onClick={handleBack}>Back</button>
     </div>
   );
 }
